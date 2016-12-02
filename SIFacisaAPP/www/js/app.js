@@ -1,24 +1,23 @@
-// Ionic Starter App
+/*
 
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives','app.services',])
+  DeepBlue Starter Kit - version 1.1
+  Copyright (c) 2015 INMAGIK SRL - www.inmagik.com
+  All rights reserved
 
-.config(function($ionicConfigProvider, $sceDelegateProvider){
+  written by Mauro Bianchi
+  bianchimro@gmail.com  
   
+  file: app.js
+  
+*/
 
-  $sceDelegateProvider.resourceUrlWhitelist([ 'self','*://www.youtube.com/**', '*://player.vimeo.com/video/**']);
+angular.module('deepBlue', ['ionic', 'deepBlue.controllers', 'deepBlue.services'])
 
-})
-
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope, $timeout, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+    if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
     }
@@ -26,28 +25,147 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.directives
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+    /* 
+      #SIMPLIFIED-IMPLEMENTATION:
+      Example access control.
+      A real app would probably call a service method to check if there
+      is a logged user.
+
+      #IMPLEMENTATION-DETAIL: views that require authorizations have an
+      "auth" key with value = "true".
+    */
+    $rootScope.$on('$stateChangeStart', 
+      function(event, toState, toParams, fromState, fromParams){
+        if(toState.data && toState.data.auth == true && !$rootScope.user.email){
+          event.preventDefault();
+          $state.go('app.login');   
+        }
+    });
+
   });
 })
 
-.directive('disableSideMenuDrag', ['$ionicSideMenuDelegate', '$rootScope', function($ionicSideMenuDelegate, $rootScope) {
-    return {
-        restrict: "A",  
-        controller: ['$scope', '$element', '$attrs', function ($scope, $element, $attrs) {
+.config(function($stateProvider, $urlRouterProvider) {
 
-            function stopDrag(){
-              $ionicSideMenuDelegate.canDragContent(false);
-            }
+  /*
 
-            function allowDrag(){
-              $ionicSideMenuDelegate.canDragContent(true);
-            }
+    Here we setup the views of our app.
+    In this case:
+    - feed, account, shop, checkout, cart will require login
+    - app will go to the "start view" when launched.
 
-            $rootScope.$on('$ionicSlides.slideChangeEnd', allowDrag);
-            $element.on('touchstart', stopDrag);
-            $element.on('touchend', allowDrag);
-            $element.on('mousedown', stopDrag);
-            $element.on('mouseup', allowDrag);
+    #IMPLEMENTATION-DETAIL: views that require authorizations have an
+    "auth" key with value = "true".
 
-        }]
-    };
-}])
+  */
+  
+  $stateProvider
+
+  .state('app', {
+    url: '/app',
+    abstract: true,
+    templateUrl: 'templates/menu.html',
+    controller: 'AppCtrl'
+  })
+  
+  .state('app.start', {
+    url: '/start',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/start.html'
+      }
+    }
+  })
+
+  .state('app.login', {
+    url: '/login',
+    cached : false,
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/login.html',
+        controller : 'LoginCtrl'
+      }
+    }
+  })
+
+  .state('app.forgot', {
+    url: '/forgot',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/forgot.html'
+      }
+    }
+  })
+
+  .state('app.signup', {
+    url: '/signup',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/signup.html'
+      }
+    }
+  })
+
+  .state('app.account', {
+      url: '/account',
+      data : { auth : true },
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/account.html',
+          controller : 'AccountCtrl'
+        }
+      }
+  })
+
+  .state('app.feed', {
+    url: '/feed',
+    data : { auth : true },
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/feed.html',
+        controller : 'FeedsCtrl'
+      }
+    }
+  })
+
+  .state('app.shop', {
+    url: '/shop',
+    data : { auth : true },
+    cache : false,
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/shop.html',
+        controller : 'ShopCtrl'
+      }
+    }
+  })
+
+  .state('app.cart', {
+    url: '/cart',
+    data : { auth : true },
+    cache : false,
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/cart.html',
+        controller : 'CartCtrl'
+      }
+    }
+  })
+
+  .state('app.checkout', {
+    url: '/checkout',
+    data : { auth : true },
+    cache : false,
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/checkout.html',
+        controller : 'CheckoutCtrl'
+      }
+    }
+  })
+  
+  // If none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/app/start');
+
+});
