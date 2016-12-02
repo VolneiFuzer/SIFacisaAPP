@@ -10,7 +10,7 @@ angular.module('app.routes', [])
     
   
 
-      .state('sIFacisa.notCias', {
+      .state('sIFacisa2.notCias', {
     url: '/page1',
     views: {
       'side-menu21': {
@@ -20,7 +20,13 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('sIFacisa.eventos', {
+  .state('sIFacisa', {
+    url: '/page9',
+    templateUrl: 'templates/sIFacisa.html',
+    controller: 'sIFacisaCtrl'
+  })
+
+  .state('sIFacisa2.eventos', {
     url: '/page2',
     views: {
       'side-menu21': {
@@ -30,7 +36,7 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('sIFacisa.sobreOCurso', {
+  .state('sIFacisa2.sobreOCurso', {
     url: '/page3',
     views: {
       'side-menu21': {
@@ -40,7 +46,7 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('sIFacisa.planosDeCurso', {
+  .state('sIFacisa2.planosDeCurso', {
     url: '/page4',
     views: {
       'side-menu21': {
@@ -50,7 +56,7 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('sIFacisa.gradeCurricular', {
+  .state('sIFacisa2.gradeCurricular', {
     url: '/page5',
     views: {
       'side-menu21': {
@@ -60,7 +66,7 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('sIFacisa.professores', {
+  .state('sIFacisa2.professores', {
     url: '/page6',
     views: {
       'side-menu21': {
@@ -70,7 +76,7 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('sIFacisa.contato', {
+  .state('sIFacisa2.contato', {
     url: '/page7',
     views: {
       'side-menu21': {
@@ -80,7 +86,7 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('sIFacisa.sobreOApp', {
+  .state('sIFacisa2.sobreOApp', {
     url: '/page8',
     views: {
       'side-menu21': {
@@ -90,13 +96,13 @@ angular.module('app.routes', [])
     }
   })
 
-  .state('sIFacisa', {
+  .state('sIFacisa2', {
     url: '/side-menu21',
-    templateUrl: 'templates/sIFacisa.html',
-    controller: 'sIFacisaCtrl'
+    templateUrl: 'templates/sIFacisa2.html',
+    controller: 'sIFacisa2Ctrl'
   })
 
-$urlRouterProvider.otherwise('/side-menu21/page1')
+$urlRouterProvider.otherwise('/page9')
 
   
 
