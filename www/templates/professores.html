@@ -5,22 +5,19 @@
       <p style="color:#000000;">Relação de professores do surso de Sistemas de infomração e seus respectivos e-mails</p>
     </div>
     <table border="1">
-      <tbody>
+      <thead>
         <tr>
           <th>Professor</th>
           <th>E-mail</th>
-          <th>Site</th>
         </tr>
-        <tr>
-          <td>Adriano Araújo Santos</td>
-          <td>adriano@copin.ufcg.edu.br</td>
-          <td>-</td>
+      </thead>
+      <tbody>
+        
+        <tr ng-repeat="(key, value) in professores">
+          <td>{{value.nome}}</td>
+          <td>{{value.email}}</td>
         </tr>
-        <tr>
-          <td>Anne Karine de Queiroz</td>
-          <td>anne.midias@gmail.com</td>
-          <td>–</td>
-        </tr>
+
       </tbody>
     </table>
   </ion-content>

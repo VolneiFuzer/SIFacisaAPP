@@ -53,6 +53,9 @@ function ($scope, $stateParams) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
 
+	firebase.database().ref('/professores/').once('value').then(function(snapshot) {
+		$scope.professores = snapshot.val();
+	});
 
 }])
    
