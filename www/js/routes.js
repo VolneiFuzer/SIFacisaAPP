@@ -7,10 +7,8 @@ angular.module('app.routes', [])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
-    
   
-
-      .state('sIFacisa2.notCias', {
+  .state('sIFacisa2.notCias', {
     url: '/page1',
     views: {
       'side-menu21': {
@@ -18,12 +16,6 @@ angular.module('app.routes', [])
         controller: 'notCiasCtrl'
       }
     }
-  })
-
-  .state('sIFacisa', {
-    url: '/page9',
-    templateUrl: 'templates/sIFacisa.html',
-    controller: 'sIFacisaCtrl'
   })
 
   .state('sIFacisa2.eventos', {
@@ -52,16 +44,6 @@ angular.module('app.routes', [])
       'side-menu21': {
         templateUrl: 'templates/planosDeCurso.html',
         controller: 'planosDeCursoCtrl'
-      }
-    }
-  })
-
-  .state('sIFacisa2.gradeCurricular', {
-    url: '/page5',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/gradeCurricular.html',
-        controller: 'gradeCurricularCtrl'
       }
     }
   })
@@ -102,8 +84,6 @@ angular.module('app.routes', [])
     controller: 'sIFacisa2Ctrl'
   })
 
-$urlRouterProvider.otherwise('/page9')
-
-  
+$urlRouterProvider.otherwise('/side-menu21/page1')
 
 });

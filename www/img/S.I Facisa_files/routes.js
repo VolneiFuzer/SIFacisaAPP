@@ -10,7 +10,7 @@ angular.module('app.routes', [])
     
   
 
-      .state('sIFacisa2.notCias', {
+  .state('sIFacisa2.notCias', {
     url: '/page1',
     views: {
       'side-menu21': {
@@ -18,12 +18,6 @@ angular.module('app.routes', [])
         controller: 'notCiasCtrl'
       }
     }
-  })
-
-  .state('sIFacisa', {
-    url: '/page9',
-    templateUrl: 'templates/sIFacisa.html',
-    controller: 'sIFacisaCtrl'
   })
 
   .state('sIFacisa2.eventos', {
@@ -52,16 +46,6 @@ angular.module('app.routes', [])
       'side-menu21': {
         templateUrl: 'templates/planosDeCurso.html',
         controller: 'planosDeCursoCtrl'
-      }
-    }
-  })
-
-  .state('sIFacisa2.gradeCurricular', {
-    url: '/page5',
-    views: {
-      'side-menu21': {
-        templateUrl: 'templates/gradeCurricular.html',
-        controller: 'gradeCurricularCtrl'
       }
     }
   })
@@ -102,8 +86,6 @@ angular.module('app.routes', [])
     controller: 'sIFacisa2Ctrl'
   })
 
-$urlRouterProvider.otherwise('/page9')
-
-  
+$urlRouterProvider.otherwise('/side-menu21/page1')
 
 });
