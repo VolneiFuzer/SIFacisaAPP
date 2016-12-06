@@ -29,6 +29,10 @@ function ($scope, $stateParams) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
 
+	firebase.database().ref('/sobre/').once('value').then(function(snapshot) {
+		$scope.sobre = snapshot.val();
+	});
+
 
 }])
    
@@ -53,6 +57,9 @@ function ($scope, $stateParams) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
 
+	firebase.database().ref('/professores/').once('value').then(function(snapshot) {
+		$scope.professores = snapshot.val();
+	});
 
 }])
    
