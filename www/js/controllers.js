@@ -41,6 +41,9 @@ function ($scope, $stateParams) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
 
+	firebase.database().ref('/periodos/').once('value').then(function(snapshot) {
+		$scope.periodos = snapshot.val();
+	});
 
 }])
    
@@ -48,7 +51,6 @@ function ($scope, $stateParams) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
-
 
 }])
    

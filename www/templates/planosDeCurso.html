@@ -1,79 +1,19 @@
 <ion-view title="Planos de Curso" id="page4" style="">
   <ion-content padding="true" class="has-header">
     <h1 id="planosDeCurso-heading3" style="color: rgb(0, 0, 0);">Planos de Curso</h1>
-    <div class="item item-body" id="planosDeCurso-list-item-container12" style="">
+    
+    <div class="item item-body" id="planosDeCurso-list-item-container12" style="" ng-repeat="(key, value) in periodos">
+      
       <div id="planosDeCurso-markdown18" class="show-list-numbers-and-dots">
         <p style="margin-top:0px;color:#000000;">
-          <strong>1º Período</strong>
+          <strong>{{value.titulo}}</strong>
         </p>
       </div>
-      <div id="planosDeCurso-markdown27" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">Administração</p>
+      
+      <div id="planosDeCurso-markdown27" class="show-list-numbers-and-dots" ng-repeat="(key, value) in value.disciplinas">
+        <p style="margin-top:0px;color:#000000;">{{value.titulo}}</p>
       </div>
-      <div id="planosDeCurso-markdown28" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">Inglês</p>
-      </div>
-      <div id="planosDeCurso-markdown29" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">Introdução a Informática</p>
-      </div>
-      <div id="planosDeCurso-markdown30" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">Laboratório de Programação</p>
-      </div>
-      <div id="planosDeCurso-markdown31" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">Leitura e Produção de Texto</p>
-      </div>
-      <div id="planosDeCurso-markdown32" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">Programação I</p>
-      </div>
-    </div>
-    <div class="item item-body" id="planosDeCurso-list-item-container13" style="">
-      <div id="planosDeCurso-markdown19" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          <strong>2º Período</strong>
-        </p>
-      </div>
-    </div>
-    <div class="item item-body" id="planosDeCurso-list-item-container14" style="">
-      <div id="planosDeCurso-markdown20" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          <strong>3º Período</strong>
-        </p>
-      </div>
-    </div>
-    <div class="item item-body" id="planosDeCurso-list-item-container15" style="">
-      <div id="planosDeCurso-markdown21" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          <strong>4º Período</strong>
-        </p>
-      </div>
-    </div>
-    <div class="item item-body" id="planosDeCurso-list-item-container16" style="">
-      <div id="planosDeCurso-markdown22" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          <strong>5º Período</strong>
-        </p>
-      </div>
-    </div>
-    <div class="item item-body" id="planosDeCurso-list-item-container18" style="">
-      <div id="planosDeCurso-markdown24" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          <strong>6º Período</strong>
-        </p>
-      </div>
-    </div>
-    <div class="item item-body" id="planosDeCurso-list-item-container19" style="">
-      <div id="planosDeCurso-markdown25" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          <strong>7º Período</strong>
-        </p>
-      </div>
-    </div>
-    <div class="item item-body" id="planosDeCurso-list-item-container20" style="">
-      <div id="planosDeCurso-markdown26" class="show-list-numbers-and-dots">
-        <p style="margin-top:0px;color:#000000;">
-          <strong>8º Período</strong>
-        </p>
-      </div>
+     
     </div>
   </ion-content>
 </ion-view>
