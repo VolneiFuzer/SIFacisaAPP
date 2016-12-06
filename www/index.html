@@ -65,13 +65,25 @@
 
   </head>
   <body ng-app="app" animation="slide-left-right-ios7">
-  <div style="">
-  <div style="">
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button></ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-nav-view></ion-nav-view>
-  </div>
-</div>
+    <div style="">
+      <ion-nav-bar class="bar-stable">
+        <ion-nav-back-button></ion-nav-back-button>
+      </ion-nav-bar>
+      <ion-nav-view></ion-nav-view>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB-EJUpQ_usaHZDNQ_tgbA1k2BGjavCYmU",
+        authDomain: "sifacisaapp-c5f33.firebaseapp.com",
+        databaseURL: "https://sifacisaapp-c5f33.firebaseio.com",
+        storageBucket: "sifacisaapp-c5f33.appspot.com",
+        messagingSenderId: "129931623936"
+      };
+      firebase.initializeApp(config);
+    </script>
+
   </body>
 </html>
