@@ -18,6 +18,16 @@ angular.module('app.routes', [])
     }
   })
 
+  .state('sIFacisa2.noticia', {
+    url: '/noticia',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/noticia.html',
+        controller: 'noticiaCtrl'
+      }
+    }
+  })
+
   .state('sIFacisa2.eventos', {
     url: '/page2',
     views: {
