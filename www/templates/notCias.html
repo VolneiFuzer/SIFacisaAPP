@@ -1,32 +1,32 @@
-<ion-view title="Início - Notícias" id="page1" style="">
-  <ion-nav-buttons side="right" class="has-header">
-    <button class="button button-icon icon ion-android-home"></button>
-  </ion-nav-buttons>
+<ion-view title="" id="page1" style="">
+
   <ion-content padding="true" class="has-header">
     
-    <div style=" position: relative">
-        <div>
-          <img src="img/foto_lab.jpg" style="margin-left: -10px; margin-top: -10px; margin-bottom: 10px; height: 100px">
-        </div>
-    </div>
-    
-    <div class="list card" ng-repeat="(key, value) in noticias">
-      <div ng-click="goToNoticia(key)">
+    <div class="list card" ng-repeat="noticia in noticias | orderBy:'-data'">
+      
+      <div ng-click="goToNoticia(noticia.id)">
+        
         <ion-item class="item-icon-left positive" id="notCias-list-item11" style="">
-          <i class="icon ion-alert"></i>{{value.titulo}}</ion-item>
-        <div class=" item item-image">
-          <img src="{{value.link}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+          <i class="icon ion-alert"></i>
+          <div style="font-size:1.5em">{{noticia.titulo}}</div>
+        </ion-item>
+        
+        <div class="item item-image" ng-if="noticia.img">
+          <img src="{{noticia.img}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
         </div>
+        
         <div class="item item-body" id="notCias-list-item-container2" style="">
           <div id="notCias-markdown2" class="show-list-numbers-and-dots">
-            <p style="margin-top:0px;color:#000000;">
-              {{value.subtitulo}}
+            <span style="color:#000000;"><i>{{formatDate(noticia.data)}}</i></span>
+            <p style="margin-top:0px;color:696969;">
+              {{noticia.subtitulo}}
             </p>
           </div>
         </div>
-      </div>
-    </div>
 
+      </div>
+
+    </div>
     
   </ion-content>
 </ion-view>

@@ -1,38 +1,43 @@
-<ion-view title="Sobre o app" id="page8" style="">
-  <ion-nav-buttons side="right" class="has-header">
-    <button class="button button-icon icon ion-ios-help"></button>
-  </ion-nav-buttons>
-	<ion-content padding="true" class="has-header">
-		<div style="position: relative;">
-			<div>
-				<img src="img/foto_lab.jpg" style="margin-left: -10px; margin-top: -10px; margin-bottom: 30px; height: 100px">
+<ion-view title="" id="page8" style="">
+	<ion-content padding="true" class="has-header" style="margin-bottom: 40px;">
+			
+			<h1 id="desenvolvedores-heading5" style="color: rgb(0, 0, 0);">Sobre o App</h1>
+
+			<strong>Desenvolvedores:</strong>
+			
+			<div class="list">
+
+			    <a class="item item-avatar" ng-repeat="desenvolvedor in sobre.desenvolvedores">
+			      <img src="{{desenvolvedor.img}}">
+			      <h2>{{desenvolvedor.nome}}</h2>
+			      <p>{{desenvolvedor.email}}</p>
+			    </a>
+
 			</div>
-			<div>
-				<ion-card>
-					<ion-card-header>
-						<strong>Desenvolvedores:</strong>
-					</ion-card-header>
-						<br />
-					<ion-card-content>
-						Bueno Nepomuceno, <br />
-						Volnei Fuzer e <br /> 
-						Paulo Giovanny.
-					</ion-card-content>
-				</ion-card>
+
+			<strong>Orientador:</strong>
+
+			<div class="list">
+
+			    <a class="item item-avatar" ng-repeat="orientador in sobre.orientadores">
+			      <img src="{{orientador.img}}">
+			      <h2>{{orientador.nome}}</h2>
+			      <p>{{orientador.email}}</p>
+			    </a>
+
 			</div>
-				<br />
-			<div>
-				<ion-card>
-					<ion-card-header>
-						<strong>Orientador:</strong>
-					</ion-card-header>
-						<br />
-					<ion-card-content>
-						Prof: Daniel Abella
-					</ion-card-content>
-				</ion-card>
+
+			<strong>Contribuidores:</strong>
+
+			<div class="list">
+
+			    <a class="item item-avatar" ng-repeat="contribuidor in sobre.contribuidores">
+			      <img src="{{contribuidor.img}}">
+			      <h2>{{contribuidor.nome}}</h2>
+			      <p>{{contribuidor.email}}</p>
+			    </a>
+
 			</div>
-				<br />
-		</div>
+
 	</ion-content>
 </ion-view>

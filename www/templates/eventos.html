@@ -1,87 +1,31 @@
-<ion-view title="Eventos" id="page2" style="">
-  <ion-nav-buttons side="right" class="has-header">
-    <button class="button button-icon icon ion-android-calendar"></button>
-  </ion-nav-buttons>
+<ion-view title="" id="page2" style="color: white">
   <ion-content padding="true" class="has-header">
 
-    <div style=" position: relative">
-        <div>
-          <img src="img/foto_lab.jpg" style="margin-left: -10px; margin-top: -10px; margin-bottom: 30px; height: 100px">
+    <div class="list card" ng-repeat="evento in eventos | orderBy:'-data'">
+      
+      <div ng-click="goToEvento(evento.id)">
+        
+        <ion-item class="item-icon-left positive" id="notCias-list-item11" style="">
+          <i class="icon ion-calendar"></i>
+          <div style="font-size:1.5em">{{evento.titulo}}</div>
+        </ion-item>
+        
+        <div class=" item item-image" ng-if="evento.img">
+          <img src="{{evento.img}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
         </div>
-    </div>
-
-    <div class="list card" id="eventos-card25">
-      <form id="eventos-form1" class="list">
-        <label class="item item-input" id="eventos-search1" style="">
-          <i class="icon ion-search placeholder-icon"></i>
-          <input placeholder="" type="search">
-        </label>
-      </form>
-
-      <ion-item class="item-avatar" id="eventos-list-item21" style="">
-        <img src="img/OiKYF8T9S4OAznUO4SEr_imagem-matria-JS-Day-Campina-Grande-330x200.jpg">
-        <h2>Item</h2>
-      </ion-item>
-      <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider2" id="eventos-slider2" style="width:100%;height:200px;">
-        <ion-slide-page id="eventos-slide210" style="background:url(img/avfsZwJT9WGsBj982ul1_kitten1.jpg) no-repeat center;background-size:cover;"></ion-slide-page>
-        <ion-slide-page id="eventos-slide211" style="background:url(img/gHd5vedGQJu4s4qsPQvr_kitten2.jpg) no-repeat center;background-size:cover;"></ion-slide-page>
-        <ion-slide-page id="eventos-slide212" style="background:url(img/WE6rB9dZRTiIWQlP5qsA_kitten3.jpg) no-repeat center;background-size:cover;"></ion-slide-page>
-      </ion-slides>
-      <div class="item item-body" id="eventos-list-item-container7" style="">
-        <div id="eventos-markdown8" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">Some friendly
-            <strong>markdown</strong>
-          </p>
+        
+        <div class="item item-body" id="notCias-list-item-container2" style="">
+          <div id="notCias-markdown2" class="show-list-numbers-and-dots">
+            <span style="color:#000000;"><i>{{evento.data}}</i></span>
+            <p style="margin-top:0px;color:696969;">
+              {{evento.subtitulo}}
+            </p>
+          </div>
         </div>
+
       </div>
-      <ion-item class="item-icon-left assertive" id="eventos-list-item22" style="">
-        <i class="icon ion-music-note"></i>Play Song</ion-item>
+
     </div>
-    <div class="list card" id="eventos-card26">
-      <ion-item class="item-avatar" id="eventos-list-item25" style="">
-        <img src="img/E6Umnz5RTtW1NSFpvunJ_facisa-1.jpg">
-        <h2>Item</h2>
-      </ion-item>
-      <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider3" id="eventos-slider3" style="width:100%;height:200px;">
-        <ion-slide-page id="eventos-slide216" style="background:url(img/avfsZwJT9WGsBj982ul1_kitten1.jpg) no-repeat center;background-size:cover;"></ion-slide-page>
-        <ion-slide-page id="eventos-slide217" style="background:url(img/gHd5vedGQJu4s4qsPQvr_kitten2.jpg) no-repeat center;background-size:cover;"></ion-slide-page>
-        <ion-slide-page id="eventos-slide218" style="background:url(img/WE6rB9dZRTiIWQlP5qsA_kitten3.jpg) no-repeat center;background-size:cover;"></ion-slide-page>
-      </ion-slides>
-      <div class="item item-body" id="eventos-list-item-container9" style="">
-        <div id="eventos-markdown10" class="show-list-numbers-and-dots">
-          <p style="margin-top:0px;color:#000000;">Some friendly
-            <strong>markdown</strong>
-          </p>
-        </div>
-      </div>
-      <ion-item class="item-icon-left assertive" id="eventos-list-item26" style="">
-        <i class="icon ion-music-note"></i>Play Song</ion-item>
-    </div>
-    <div class="list card">
 
-  <div class="item item-avatar">
-    <img src="img/OiKYF8T9S4OAznUO4SEr_imagem-matria-JS-Day-Campina-Grande-330x200.jpg">
-    <h2>JS Day</h2>
-    <p>November 05, 1955</p>
-  </div>
-
-  <div class="item item-body">
-      <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider3" id="eventos-slider3" style="width:100%;height:200px;">
-        <ion-slide-page id="eventos-slide216" style="background:url(img/avfsZwJT9WGsBj982ul1_kitten1.jpg) no-repeat center;background-size:cover;"></ion-slide-page>
-        <ion-slide-page id="eventos-slide217" style="background:url(img/gHd5vedGQJu4s4qsPQvr_kitten2.jpg) no-repeat center;background-size:cover;"></ion-slide-page>
-        <ion-slide-page id="eventos-slide218" style="background:url(img/WE6rB9dZRTiIWQlP5qsA_kitten3.jpg) no-repeat center;background-size:cover;"></ion-slide-page>
-      </ion-slides>
-    <p>
-      This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-      the content is from a card-body consisting of an image and paragraph text. The footer
-      consists of tabs, icons aligned left, within the card-footer.
-    </p>
-    <p>
-      <a href="#" class="subdued">1 Like</a>
-      <a href="#" class="subdued">5 Comments</a>
-    </p>
-  </div>
-
-</div>
   </ion-content>
 </ion-view>

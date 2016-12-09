@@ -28,6 +28,16 @@ angular.module('app.routes', [])
     }
   })
 
+  .state('sIFacisa2.evento', {
+    url: '/evento',
+    views: {
+      'side-menu21': {
+        templateUrl: 'templates/evento.html',
+        controller: 'eventoCtrl'
+      }
+    }
+  })
+
   .state('sIFacisa2.eventos', {
     url: '/page2',
     views: {

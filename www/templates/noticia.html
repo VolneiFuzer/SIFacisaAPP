@@ -1,14 +1,16 @@
-<ion-view title="{{noticia.titulo}}" id="page3" style="" ng-controller="sobreOCursoCtrl">
-  <ion-content padding="true" class="has-header">
+<ion-view title="" id="page3" style="">
+  <ion-content padding="true" class="has-header" style="margin-bottom: 40px;">
     <h1 id="sobreOCurso-heading6" style="color: rgb(0, 0, 0);">{{noticia.titulo}}</h1>
     <div id="sobreOCurso-markdown36" class="show-list-numbers-and-dots">
       <p style="color:#000000;">
         <strong>{{noticia.subtitulo}}</strong>
       </p>
-
+      <p style="color:#696969;"><i>{{dataFormatada}}</i></p>
       <p style="color:#696969;"><i>{{noticia.descricao}}</i></p>
     </div>
-    <img src="{{noticia.link}}" width="100%">
+    <div class="item-image" ng-if="noticia.img" style="margin-bottom: 20px;">
+      <img src="{{noticia.img}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
     <div id="sobreOCurso-markdown37" class="show-list-numbers-and-dots">
       <p style="color:#000000;">{{noticia.texto}}</p>
     </div>

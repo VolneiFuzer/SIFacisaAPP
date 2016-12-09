@@ -1,29 +1,18 @@
-<ion-view title="Contato" id="page7" style="">
-  <ion-nav-buttons side="right" class="has-header">
-    <button class="button button-icon icon ion-email"></button>
-  </ion-nav-buttons>  
-  <ion-content padding="true" class="has-header">
+<ion-view title="" id="page7" style="">
+  <ion-content padding="true" class="has-header" style="margin-bottom: 40px;">
 
-    <div style=" position: relative">
-        <div>
-          <img src="img/foto_lab.jpg" style="margin-left: -10px; margin-top: -10px; margin-bottom: 10px; height: 100px">
-        </div>
-    </div>
+    <h1 id="contato-heading4" style="color: rgb(0, 0, 0);">Contatos</h1>
 
-    <h1 id="contato-heading4" style="color: rgb(0, 0, 0);">Contato</h1>
+    <strong>Coordenação:</strong>
+    
+    <div class="list">
 
-    <div>
-       <img src="img/hamurabiMedeiros.jpg" style="position: relative; display: block; width: 20%; height: auto; margin-left: auto; margin-right: auto; margin-top: auto; margin-bottom: 5%;">
-    </div>
+        <a class="item item-avatar" ng-repeat="coordenador in contatos.coordenadores">
+          <img src="{{coordenador.img}}">
+          <h2>{{coordenador.nome}}</h2>
+          <p>{{coordenador.email}}</p>
+        </a>
 
-    <div id="contato-markdown33" class="show-list-numbers-and-dots">
-   
-      <p style="color:#000000">
-        <strong>Coordenador:</strong> José Hamurabi Nóbrega de Medeiros</p>
-    </div>
-    <div id="contato-markdown34" class="show-list-numbers-and-dots">
-      <p style="color:#000000;">
-        <strong>Email:</strong> hamurabimedeiros@gmail.com</p>
     </div>
 
    

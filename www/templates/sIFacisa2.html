@@ -1,16 +1,19 @@
 <ion-side-menus enable-menu-with-back-views="false" style="">
   <ion-side-menu-content>
     <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-back-button style="color:white"></ion-nav-back-button>
       <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left" style="color:white"></button>
+        <div style="">
+          <img src="img/foto_lab.jpg" style="margin-left: -37px; margin-top: -15px; margin-bottom: 10px; width: 115%">
+        </div>
       </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-nav-view name="side-menu21"></ion-nav-view>
+    <ion-nav-view name="side-menu21" style="top:15px"></ion-nav-view>
   </ion-side-menu-content>
   <ion-side-menu side="left" id="side-menu21">
     <ion-header-bar class="bar-stable">
-      <div class="title"></div>
+      <div class="title">SI - Facisa</div>
     </ion-header-bar>
     <ion-content padding="false" class="side-menu-left has-header ">
       <ion-list id="sIFacisa2-list1">
@@ -23,7 +26,7 @@
         <ion-item class="item-icon-left" id="sIFacisa2-list-item2" ui-sref="sIFacisa2.sobreOCurso" menu-close="">Sobre o Curso
           <i class="icon ion-android-bulb"></i>
         </ion-item>
-        <ion-item class="item-icon-left" id="sIFacisa2-list-item3" ui-sref="sIFacisa2.planosDeCurso" menu-close="">Planos de Curso
+        <ion-item class="item-icon-left" id="sIFacisa2-list-item3" ui-sref="sIFacisa2.planosDeCurso" menu-close="">Disciplinas
           <i class="icon ion-android-list"></i>
         </ion-item>
         <ion-item class="item-icon-left" id="sIFacisa2-list-item5" ui-sref="sIFacisa2.professores" menu-close="">Professores

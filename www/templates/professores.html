@@ -1,34 +1,20 @@
-<ion-view title="Professores" id="page6" style="">
-  <ion-nav-buttons side="right" class="has-header">
-    <button class="button button-icon icon ion-android-people"></button>
-  </ion-nav-buttons>  
-  <ion-content padding="true" class="has-header">
-
-    <div style=" position: relative">
-        <div>
-          <img src="img/foto_lab.jpg" style="margin-left: -10px; margin-top: -10px; margin-bottom: 10px; height: 100px">
-        </div>
-    </div>
+<ion-view title="" id="page6" style=""> 
+  <ion-content padding="true" class="has-header" style="margin-bottom: 40px;">
 
     <h1 id="professores-heading5" style="color: rgb(0, 0, 0);">Professores</h1>
     <div id="professores-markdown35" class="show-list-numbers-and-dots">
-      <p style="color:#000000;">Relação de professores do surso de Sistemas de infomração e seus respectivos e-mails</p>
+      <p style="color:#000000;">Relação de professores do surso de Sistemas de Informação e seus respectivos e-mails</p>
     </div>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>Professor</th>
-          <th>E-mail</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-        <tr ng-repeat="(key, value) in professores">
-          <td>{{value.nome}}</td>
-          <td>{{value.email}}</td>
-        </tr>
+    
+    <div class="list">
 
-      </tbody>
-    </table>
+        <a class="item item-avatar" ng-repeat="professor in professores | orderBy : 'nome'">
+          <img src="{{professor.img}}">
+          <h2>{{professor.nome}}</h2>
+          <p>{{professor.email}}</p>
+        </a>
+
+    </div>
+
   </ion-content>
 </ion-view>
